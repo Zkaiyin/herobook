@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英雄聯盟圖鑑</title>
+    <link rel="stylesheet" href="hero.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>英雄聯盟圖鑑</h1>
+        <input type="text" id="searchInput" placeholder="輸入名字">
+        <button onclick="filterChampions()">搜尋</button>
+        <button onclick="resetFilters()">重整</button>
+        <select id="sortSelect" onchange="sortChampions()">
+            <option value="name">名稱</option>
+            <option value="attack">攻擊</option>
+            <option value="defense">防禦</option>
+            <option value="magic">魔法</option>
+            <option value="difficulty">難度</option>
+        </select>
+    </header>
+    <main id="championContainer"></main>
+    <div id="pagination"></div>
+    <h2>收藏的角色</h2>
+    <div id="favoritesContainer"></div>
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="championDetails"></div>
+            <canvas id="radarChart"></canvas>
+        </div>
+    </div>
+    <script src="hero.js"></script>
+</body>
+</html>
